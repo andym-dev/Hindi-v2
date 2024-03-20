@@ -8,18 +8,18 @@
         <div id="flashcard-container">
             <!-- Flashcard display area -->
             {% if flashcards %}
-            <div class="flashcard" onclick="flipCard(this)">
-                <div class="front">
-                    <p class="language-toggle">English</p>
-                    {{ flashcards[current_flashcard_index].english }}
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">
+                        <p class="language-toggle">English</p>
+                        {{ flashcards[0].english }}
+                    </div>
+                    <div class="back">
+                        <p class="language-toggle">Hindi</p>
+                        {{ flashcards[0].hindi }}
+                    </div>
                 </div>
-                <div class="back">
-                    <p class="language-toggle">Hindi</p>
-                    {{ flashcards[current_flashcard_index].hindi }}
-                </div>
-            </div>
             {% else %}
-            <p>No flashcards available.</p>
+                <p>Please select a flashcard type</p>
             {% endif %}
         </div>
         <div class="controls">

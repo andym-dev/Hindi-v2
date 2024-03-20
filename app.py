@@ -64,12 +64,19 @@ def index():
 
 @app.route('/flashcards', methods=['GET', 'POST'])
 def flashcard_display():
+    
     if request.method == 'POST':
         flashcard_type_id = request.form.get('flashcard_type')
         flashcards = Flashcard.query.filter_by(flashcard_type_id=flashcard_type_id).all()
+        
+        # Assuming the current flashcard index is obtained from the request data or calculated dynamically
+        # current_flashcard_index = calculate_current_flashcard_index(request)
+
         return render_template('flashcard_display.html', flashcards=flashcards)
     else:
         return render_template('flashcard_display.html')
+
+
 
 if __name__ == '__main__':
     with app.app_context():
