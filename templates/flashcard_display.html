@@ -1,0 +1,32 @@
+<!-- flashcard_display.html -->
+{% extends 'base.html' %}
+
+{% block title %}Flashcards{% endblock %}
+
+{% block content %}
+    <main>
+        <div id="flashcard-container">
+            <!-- Flashcard display area -->
+            {% if flashcards %}
+            <div class="flashcard" onclick="flipCard(this)">
+                <div class="front">
+                    <p class="language-toggle">English</p>
+                    {{ flashcards[current_flashcard_index].english }}
+                </div>
+                <div class="back">
+                    <p class="language-toggle">Hindi</p>
+                    {{ flashcards[current_flashcard_index].hindi }}
+                </div>
+            </div>
+            {% else %}
+            <p>No flashcards available.</p>
+            {% endif %}
+        </div>
+        <div class="controls">
+            <button onclick="markCorrect()">Correct</button>
+            <button onclick="markIncorrect()">Incorrect</button>
+            <button onclick="toggleLanguage()">Toggle Language</button>
+            <button onclick="shuffleFlashcards()">Shuffle</button>
+        </div>
+    </main>
+{% endblock %}

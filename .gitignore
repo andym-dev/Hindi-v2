@@ -1,0 +1,29 @@
+# Personal gitignore
+*.json
+.gitconfig
+
+# Generic gitignore
+# Ignore Python byte-code files, and environment folders
+*.pyc
+__pycache__/
+
+# Ignore local development settings
+.env
+
+# Ignore system and IDE files
+.DS_Store
+.vscode/
+.idea/
+
+# Ignore compiled binaries
+*.exe
+*.dll
+*.so
+
+# Ignore logs and databases
+*.log
+*.sqlite
+
+# Ignore dependency directories
+node_modules/
+venv/

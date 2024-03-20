@@ -1,0 +1,19 @@
+<!-- index.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <main>
+        <h1>Welcome to Flashcard Website</h1>
+        <form action="{{ url_for('flashcard_display') }}" method="post">
+            <label for="flashcard_type">Select Flashcard Type:</label>
+            <select name="flashcard_type" id="flashcard_type">
+                {% for flashcard_type in flashcard_types %}
+                <option value="{{ flashcard_type.id }}">{{ flashcard_type.name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="btn">Start Learning</button>
+        </form>
+    </main>
+{% endblock %}
