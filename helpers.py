@@ -1,5 +1,11 @@
 from app import db, FlashcardType, Flashcard
 
+"""
+flask shell
+from helpers import *
+flash_type_count()
+"""
+
 def flash_type_count():
     flashcard_types = FlashcardType.query.all()
     for flashcard_type in flashcard_types:
